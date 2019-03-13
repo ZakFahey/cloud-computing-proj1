@@ -1,0 +1,30 @@
+{
+  "name": "cloud-computing-hw2",
+  "version": "1.0.0",
+  "description": "HTTP web service for weather forecasts",
+  "main": "src/api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZakFahey/cloud-computing-hw2.git"
+  },
+  "author": "Zak Fahey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZakFahey/cloud-computing-hw2/issues"
+  },
+  "homepage": "https://github.com/ZakFahey/cloud-computing-hw2#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "hapi": "^18.1.0",
+    "hapi-swagger": "^9.3.2",
+    "inert": "^5.1.2",
+    "joi": "^14.3.1",
+    "moment": "^2.24.0",
+    "stats-lite": "^2.2.0",
+    "vision": "^5.4.4"
+  }
+}
