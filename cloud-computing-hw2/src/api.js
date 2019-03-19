@@ -9,7 +9,7 @@ const utils = require('./utils');
 
 async function start() {
     const server = Hapi.server({
-        host: 'localhost',
+        host: '0.0.0.0',
         port: 8000,
         routes: {
             cors: true
