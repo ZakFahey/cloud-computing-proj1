@@ -1,4 +1,4 @@
-var host = 'http:localhost:8000';
+var host = window.location.origin + ':8000';
 
 $('#submit').click(function (e) {
     $('#error').text('');
