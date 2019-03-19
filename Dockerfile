@@ -14,4 +14,4 @@ COPY cloud-computing-hw2/src src/
 COPY cloud-computing-hw3/src frontend
 
 EXPOSE 8000 80
-CMD ["concurrently", "npm start", "http-server frontend -p 80"]
+CMD ["concurrently", "API_KEY=$API_KEY npm start", "http-server frontend -p 80"]
