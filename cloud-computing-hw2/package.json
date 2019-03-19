@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ZakFahey/cloud-computing-hw2#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "fs": "0.0.1-security",
     "hapi": "^18.1.0",
     "hapi-swagger": "^9.3.2",

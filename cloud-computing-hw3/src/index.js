@@ -1,12 +1,13 @@
-var host = 'http://localhost:8000';
+var host = 'http:localhost:8000';
 
 $('#submit').click(function (e) {
     $('#error').text('');
     $.ajax(host + '/forecast/' + $('#date').val())
         .done(OnAPILoad)
         .fail(OnAPIFail);
-    //$.ajax('https://api.weather.gov')
-    //    .done(OnExternalAPILoad);
+    // External API is fetched through our API so that openweathermap.org's API key isn't exposed.
+    $.ajax(host + '/forecast/external')
+        .done(OnExternalAPILoad);
 });
 
 function getTableForTemps(temps) {
@@ -29,7 +30,7 @@ function OnAPILoad(result) {
 }
 
 function OnExternalAPILoad(result) {
-    $('#results2').html('<h2>Weather forecast from weather.gov</h2>' + getTableFromThirdParty(result));
+    $('#results2').html('<h2>Weather forecast from openweathermap.org</h2>' + getTableForTemps(result));
 }
 
 function OnAPIFail(err) {

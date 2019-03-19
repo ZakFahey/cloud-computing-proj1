@@ -4,6 +4,8 @@ const HapiSwagger = require('hapi-swagger');
 const Inert = require('inert');
 const Vision = require('vision');
 const Joi = require('joi');
+const axios = require('axios');
+const utils = require('./utils');
 
 async function start() {
     const server = Hapi.server({
@@ -112,6 +114,20 @@ async function start() {
                 return h.response('Record not found / invalid date format').code(404);
             }
             return h.response(record);
+        }
+    });
+
+    // Fetch weather data from openweathermap.org. For the extra credit in HW3. Here in the API so that the API key isn't exposed.
+    server.route({
+        method: 'GET',
+        path: '/forecast/external',
+        options: {
+            description: 'Gives the predicted weather of the next seven days starting from the current date using the openweathermap.org API',
+            tags: ['api']
+        },
+        handler: async function (request, h) {
+            const apiResult = await axios.get('http://api.openweathermap.org/data/2.5/forecast?q=Cincinnati,us&appid=' + process.env.API_KEY);
+            return h.response(utils.parseOpenWeatherApi(apiResult.data));
         }
     });
 

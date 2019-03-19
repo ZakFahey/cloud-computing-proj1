@@ -1,6 +1,6 @@
 # Cloud Computing HW3
 
-Web frontend for cloud computing HW2. Includes a web page with an input to check the forecast on a given date.
+Web frontend for cloud computing HW2. Includes a web page with an input to check the forecast on a given date. Also returns a forecast from openweathermap.org.
 
 ## Setup
 
