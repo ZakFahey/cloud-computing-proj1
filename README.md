@@ -8,4 +8,8 @@ This image is hosted on Docker Hub and can be fetched using the command `docker 
 
 Like in the previous assignments, you need an API key from openweathermap.org to run the external API portion of the project. You will need to register an account and get an API key if you do not have one.
 
-To start the image, run the command `docker run -p 80:80 -p 8000:8000 -e API_KEY='<your api key>' zakfahey/proj1`. The web service will then be available on port 80, and the API will be available on port 8000. On Windows, you need to run the command `docker-machine ip` to find the address of the services.
+To start the image, run the command `docker run -p 80:80 -p 8000:8000 -e API_KEY='<your api key>' zakfahey/proj1`. The web service will then be available on port 80, and the API will be available on port 8000.
+
+## Accessing the services
+
+The website is accessible on port 80. The API is accessible on port 8000. They will be on `localhost`, unless you are using Windows. If so, you need to run the command `docker-machine ip` to find the address of the services.
